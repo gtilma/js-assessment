@@ -15,7 +15,7 @@ exports.asyncAnswers = {
     var deferred = $.Deferred();
 
     $.ajax(url).then(function(response) {
-      var results = response.people.map(function(item) {
+      var results = response.people.map(function(person) {
         return person.name;
       }).sort();
 

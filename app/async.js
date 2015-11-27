@@ -15,11 +15,11 @@ exports.asyncAnswers = {
     var deferred = $.Deferred();
 
     $.ajax(url).then(function(response) {
-      var results = response.people.map(function(person) {
-        return person.name;
-      }).sort();
-
-      deferred.resolve(results);
+      deferred.resolve(
+        response.people.map(function(person) {
+          return person.name;
+        }).sort()
+      );
     });
 
     return deferred.promise();
